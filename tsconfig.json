@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "ignoreDeprecations":"6.0",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@datafactory/*": ["lib/datafactory/*"],
+      "@helpers/*": ["lib/helpers/*"],
+      "@fixtures/*": ["lib/fixtures/*"],
+      "@pages/*": ["lib/pages/*"]
+    }
+  }
+}

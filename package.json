@@ -1,0 +1,24 @@
+{
+  "name": "ta_nuclera",
+  "version": "1.0.0",
+  "description": "Techinical Assessment",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pendragon888/TA_Nuclera.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pendragon888/TA_Nuclera/issues"
+  },
+  "homepage": "https://github.com/pendragon888/TA_Nuclera#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.5.0",
+    "dotenv": "^17.3.1"
+  }
+}
