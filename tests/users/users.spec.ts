@@ -1,7 +1,7 @@
 import { test, expect } from '@fixtures/pages.fixture'
 import fs from 'fs'
 import path from 'path'
-import {generateNewUser} from '@helpers/randomUtils'
+import {generateNewUser, generatePassword } from '@helpers/randomUtils'
 
 test.describe('Using an Admin', ()=> {
     test.use({ storageState: 'playwright/.auth/adminAuth.json'})
@@ -22,6 +22,7 @@ test.describe('Using an Admin', ()=> {
 
     test('Verify new user with existing name cannot be added', async ({ usersPage, request }) => {
         const newUser = "Regular "+ generateNewUser()
+        const newPass = generatePassword()
 
         await expect(usersPage.newUserButton).toBeVisible()
         await usersPage.newUserButton.click()
@@ -35,7 +36,7 @@ test.describe('Using an Admin', ()=> {
             },
             data: {
                 "username": `${ newUser }`,
-                "password": "abc123",
+                "password": `${ newPass }`,
                 "role": "regular"
             }
         })
