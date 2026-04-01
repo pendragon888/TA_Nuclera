@@ -1,9 +1,10 @@
 import { test as setup, expect} from '@fixtures/pages.fixture'
 import fs from 'fs'
+import path from 'path'
 
 setup.describe('Setting up API files', async () => {
     setup("Login via API", async ({request }) => {
-    const authAPIFile = "playwright/.auth/adminAPIAuth.json";
+    const authAPIFile = path.join('playwright/.auth/adminAPIAuth.json');
     const response = await request.post(process.env.API_BASE_URL! +'/auth/login', {
         data: {
         username: process.env.ADMIN_USERNAME!,
