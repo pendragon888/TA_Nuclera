@@ -15,4 +15,13 @@ setup.describe('Setting up UI storage state files', async () => {
     await page.waitForURL(process.env.BASE_URL!+'/projects');
     await page.context().storageState({ path: userFile });
   });
+
+  setup("Setup storage structure", async ({ page }) => {
+    const userDataFile = path.join(__dirname, '../../playwright/.auth/usersData.json');
+    const projectsDataFile = path.join(__dirname, '../../playwright/.auth/projectsData.json');
+    //const adminAPIAuthFile = path.join(__dirname, '../../playwright/.auth/adminAPIAuth.json');
+    await page.context().storageState({ path: userDataFile });
+    await page.context().storageState({ path: projectsDataFile });
+    //await page.context().storageState({ path: adminAPIAuthFile });
+  });
 })

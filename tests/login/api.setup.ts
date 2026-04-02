@@ -3,7 +3,13 @@ import fs from 'fs'
 import path from 'path'
 
 setup.describe('Setting up API files', async () => {
-    setup("Login via API", async ({request }) => {
+    setup("Initialise storage", async () => {
+    const authAPIFile = path.join(__dirname, '../../playwright/.auth/adminAPIAuth.json');
+    // create file
+    fs.writeFileSync(authAPIFile, JSON.stringify('initiating file storage'), null);
+    })
+    
+    setup("Login via API", async ({ request }) => {
     const authAPIFile = path.join(__dirname, '../../playwright/.auth/adminAPIAuth.json');
     const response = await request.post(process.env.API_BASE_URL! +'/auth/login', {
         data: {
