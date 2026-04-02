@@ -86,12 +86,14 @@ test.describe('As a non-admin on Projects', () => {
         await expect(projectsPage.newProjectButton).not.toBeVisible()
     })
 
-    test('Filter for project', async ({ projectsPage }) => {
+    test('Filter for project and check members section is not present', async ({ projectsPage, projectDetailsPage }) => {
         const projectName = 'Beta'
 
         await expect(projectsPage.searchProjectInput).toBeVisible()
         await projectsPage.searchProjectInput.fill(projectName)
         await expect(projectsPage.projectName).toHaveCount(1)
+        await projectsPage.projectName.getByText(projectName).click()
+        await expect(projectDetailsPage.projectDetailMemberAddButton).not.toBeVisible()
     })
 
     test('Filter for status', async ({ projectsPage}) => {
