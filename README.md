@@ -72,6 +72,9 @@ I did create a test to perform incorrect credentials, however the automation tes
 
 ![LoginTest](/images/LoginIncorrectCredentials.jpg)
 
+Code for this logic looked like this (not committed to repo):
+![LoginTestCode](LoginIncorrectCredentials(code).jpg)
+
 Creating a new user and using their details to login was also more effiecient to test, this could be automated but I deemed was lower priority and manual testing would suffice.
 
 
@@ -89,6 +92,8 @@ Non-functional testing was carried out (regular user trying to access this /user
 Manual testing was performed to validate the result of the sync.
 
 Automation was a bit tricky to perform as the success/fail of the sync sometimes took over 30 seconds to complete which meant I had to extend the default timeout. I also tried looking at conditional testing to confirm either of sync outcomes but deemed this too fragile and low ROI to implement further.
+
+![SyncCode](SynchroniseTests.jpg)
 
 ### Non-functional testing
 Performing manual testing and using additional tools would be used to improve the quality of the application.
