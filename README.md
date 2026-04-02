@@ -65,32 +65,32 @@ I am also using API calls, as they are inherently faster when gathering and sett
 
 Identify specific features you chose not to automate and explain why (e.g., low ROI, high fragility, or better suited for manual exploratory testing).
 
-###Login screen
+### Login screen
 Exploratory testing was quicker to perform negative testing such as entering an incorrect password, leaving a blank username field upon login submission, and going 'offline' when validating for error messages.
 
 I did create a test to perform incorrect credentials, however the automation test was unable to detect the error text appearing.
 
-![LoginTest]()
+![LoginTest](/images/LoginIncorrectCredentials.jpg)
 
 Creating a new user and using their details to login was also more effiecient to test, this could be automated but I deemed was lower priority and manual testing would suffice.
 
 
-###Projects screen
+### Projects screen
 Due to time constraints, I would have liked to automated the deletion of single and bulk projects, but tested this feature manually.
 
 Manual testing was easier to perform when accessing functions on a project in one browser instance, whilst in another browser that same project has been deleted.
 
-###Users screen
+### Users screen
 This was automated in terms of user creation. Manual testing was performed to validate that the new user can log into the application.
 
 Non-functional testing was carried out (regular user trying to access this /user url), load testing of 100 users.
 
-###Synchronise screen
+### Synchronise screen
 Manual testing was performed to validate the result of the sync.
 
 Automation was a bit tricky to perform as the success/fail of the sync sometimes took over 30 seconds to complete which meant I had to extend the default timeout. I also tried looking at conditional testing to confirm either of sync outcomes but deemed this too fragile and low ROI to implement further.
 
-###Non-functional testing
+### Non-functional testing
 Performing manual testing and using additional tools would be used to improve the quality of the application.
 
 Performance & Load testing would be carried out on the APIs (bulk creation of projects/project items/users creation) to check behaviour under high volumes.
