@@ -59,6 +59,8 @@ I am using the Page Object Model (POM) design pattern to reduce code duplication
 
 The **auth.setup.ts** file is a dependency and runs before all tests, this contains logic to log the admin and non-admin user accounts through the UI, saving the authenticated browser state in a file (adminAuth.json & userAuth.json). Other tests can then re-use these states without needing to re-authentication leading to faster test execution.
 
+Test logic is placed in spec files and contain the assertions. I have used the AAA method to Arrange, Act and Assert.
+
 I am also using API calls, as they are inherently faster when gathering and setting up test data.
 
 ## Manual vs. Auto
@@ -73,13 +75,13 @@ I did create a test to perform incorrect credentials, however the automation tes
 ![LoginTest](/images/LoginIncorrectCredentials.jpg)
 
 Code for this logic looked like this (not committed to repo):
-![LoginTestCode](LoginIncorrectCredentials(code).jpg)
+![LoginTestCode](/images/LoginIncorrectCredentials(code).jpg)
 
 Creating a new user and using their details to login was also more effiecient to test, this could be automated but I deemed was lower priority and manual testing would suffice.
 
 
 ### Projects screen
-Due to time constraints, I would have liked to automated the deletion of single and bulk projects, but tested this feature manually.
+Due to time constraints, I would have liked to have automated the deletion of single and bulk projects, but tested this feature manually.
 
 Manual testing was easier to perform when accessing functions on a project in one browser instance, whilst in another browser that same project has been deleted.
 
@@ -89,11 +91,11 @@ This was automated in terms of user creation. Manual testing was performed to va
 Non-functional testing was carried out (regular user trying to access this /user url), load testing of 100 users.
 
 ### Synchronise screen
-Manual testing was performed to validate the result of the sync.
+Manual testing was performed to validate the result of the sync. A successful sync would display green ticks, a sync complete message and a timestamp on the last synced. A failed sync would result in a red cross and sync failure message.
 
 Automation was a bit tricky to perform as the success/fail of the sync sometimes took over 30 seconds to complete which meant I had to extend the default timeout. I also tried looking at conditional testing to confirm either of sync outcomes but deemed this too fragile and low ROI to implement further.
 
-![SyncCode](SynchroniseTests.jpg)
+![SyncCode](/images/SynchroniseTests.jpg)
 
 ### Non-functional testing
 Performing manual testing and using additional tools would be used to improve the quality of the application.
@@ -110,8 +112,3 @@ Playwright contains cross-browsers testing and mobile-view/responsive too. I wou
 QA Automation Engineer
 
 [LinkedIn](https://www.linkedin.com/in/kevin-dang-0b623ab5/)
-
-
-[LoginTest]:(/images/)
-[LoginTestCode]:(/images/)
-[SyncCode]:(/images/)
